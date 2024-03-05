@@ -15,5 +15,22 @@ static string[] arr_from_str(string input_str, string sep=" ") {
     return result_arr;
 }
 
+static string[] limit_to_x_chars(string[] str_arr, int limit) {
+    /*
+     * Returns array of strings from str_arr that have less or x/limit chars
+     */
+    string[] result_arr = new string[str_arr.Length];
+    // I must use arrs so I have to use this
+    int result_arr_occupied = 0;
+    for (int i = 0 ; i < str_arr.Length ; i++) {
+        if (str_arr[i].Length <= limit) {
+            result_arr[result_arr_occupied] = str_arr[i];
+            result_arr_occupied++;
+        }
+    }
+    return result_arr;
+}
+
 string arr_input = Console.ReadLine();
-Console.WriteLine(string.Join(" ", arr_from_str(arr_input)));
+string[] formatted_array = limit_to_x_chars(arr_from_str(arr_input), 3);
+Console.WriteLine(string.Join(" ", formatted_array));
