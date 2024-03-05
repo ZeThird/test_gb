@@ -31,3 +31,5 @@ string arr_input = Console.ReadLine();
 string[] formatted_array = limit_to_x_chars(arr_from_str(arr_input), 3);
 Console.WriteLine(string.Join(" ", formatted_array));
 ```
+Также есть блоксхема функции limit_to_x_chars():
+![](blockscheme.png)
